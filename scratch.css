@@ -1,0 +1,378 @@
+/* scratch.css — hand-written stylesheet for Liam's hobbies page */
+
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  color: #2c1a0e;
+  background-color: #faf6f0;
+  line-height: 1.75;
+}
+
+a {
+  color: #c1440e;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #8b2e08;
+}
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2c1a0e;
+}
+
+p {
+  margin-bottom: 14px;
+  color: #4a3020;
+}
+
+strong {
+  color: #2c1a0e;
+  font-weight: 600;
+}
+
+/* ===================== TOP NAV ===================== */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c1a0e;
+  padding: 14px 32px;
+  font-size: 0.88rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav a {
+  color: rgba(245, 237, 224, 0.85);
+  font-weight: 600;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.top-nav a:hover {
+  color: #e8925a;
+}
+
+/* ===================== HERO ===================== */
+.hero-banner {
+  background: linear-gradient(160deg, #3d2010 0%, #6b3a1f 40%, #8b5a2b 100%);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.08) 100%, transparent),
+    radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.06) 100%, transparent),
+    radial-gradient(2px 2px at 70% 30%, rgba(255,255,255,0.07) 100%, transparent),
+    radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.05) 100%, transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(232,146,90,0.85);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  color: #f5ede0;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: rgba(245,237,224,0.7);
+  margin-bottom: 36px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+.hero-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #c1440e;
+  color: #fff;
+  padding: 13px 30px;
+  border-radius: 4px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.cta-btn:hover {
+  opacity: 0.85;
+  color: #fff;
+}
+
+.cta-secondary {
+  background: rgba(245,237,224,0.12);
+  border: 1px solid rgba(245,237,224,0.3);
+  color: #f5ede0;
+}
+
+.cta-secondary:hover {
+  background: rgba(245,237,224,0.22);
+  color: #f5ede0;
+}
+
+/* ===================== LAYOUT DIVS ===================== */
+
+/* DIV 1: Main light section wrapper */
+.section-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 72px 28px;
+}
+
+/* DIV 2: Dark alternate section */
+.dark-section {
+  background: #2c1a0e;
+  padding: 72px 28px;
+}
+
+/* DIV 3: Two-column layout */
+.two-col {
+  display: flex;
+  gap: 52px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.text-block {
+  flex: 1;
+  min-width: 280px;
+}
+
+.img-block {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-header {
+  margin-bottom: 36px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(193,68,14,0.1);
+  border: 1px solid rgba(193,68,14,0.25);
+  color: #c1440e;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  color: #7a5a3a;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+.sub-heading {
+  font-size: 1.1rem;
+  color: #2c1a0e;
+  margin: 24px 0 12px;
+  font-family: 'Lora', serif;
+}
+
+/* ===================== IMAGES ===================== */
+.hobby-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(44,26,14,0.2);
+  border: 3px solid rgba(193,68,14,0.15);
+}
+
+.img-caption {
+  font-size: 0.78rem;
+  color: #9a7a5a;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ===================== LISTS ===================== */
+.steps-list {
+  padding-left: 20px;
+  margin-top: 16px;
+}
+
+.steps-list > li {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  background: #fff;
+  border-left: 3px solid #c1440e;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  list-style-type: decimal;
+  color: #2c1a0e;
+}
+
+.steps-list > li p {
+  margin: 8px 0 6px;
+  font-size: 0.92rem;
+  color: #5a3a1a;
+}
+
+.nested-list {
+  margin-top: 8px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.nested-list li {
+  color: #7a5a3a;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.hobby-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.hobby-list li {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(245,237,224,0.08);
+  color: #c8bfb5;
+  font-size: 0.95rem;
+}
+
+.hobby-list li strong {
+  color: #f0e6d3;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hobby-list li:last-child {
+  border-bottom: none;
+}
+
+/* ===================== VIDEO ===================== */
+.video-wrap {
+  margin-top: 52px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(44,26,14,0.2);
+  margin-top: 16px;
+  border: 2px solid rgba(193,68,14,0.2);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+/* ===================== TABLEAU ===================== */
+.tableau-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* ===================== ANCHOR LINKS ===================== */
+.anchor-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.anchor-links a {
+  background: rgba(245,237,224,0.07);
+  border: 1px solid rgba(245,237,224,0.18);
+  color: #f0e6d3;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.anchor-links a:hover {
+  background: rgba(245,237,224,0.15);
+  color: #fff;
+}
+
+/* ===================== FOOTER ===================== */
+.scratch-footer {
+  text-align: center;
+  padding: 22px;
+  background: #1e0f06;
+  font-size: 0.82rem;
+  color: rgba(245,237,224,0.35);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.scratch-footer a {
+  color: rgba(232,146,90,0.7);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 640px) {
+  .two-col { flex-direction: column; }
+  .img-block { flex: 0 0 auto; width: 100%; }
+  .top-nav { padding: 12px 18px; font-size: 0.8rem; }
+}
